@@ -21,3 +21,5 @@ I chose to start here as it was recommended to me by a friend and because I saw 
 ### Documentation 
 
 SEe more on `godoc` here [on the site](https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/hello-world#go-doc)
+
+### [Stopping point 2024-01-16](https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/hello-world#keep-going-more-requirements)
