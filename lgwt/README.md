@@ -40,4 +40,6 @@ SEe more on `godoc` here [on the site](https://quii.gitbook.io/learn-go-with-tes
 - comments above each function show up in the documentation as well.
 - you can setup examples (see `integers/adder_test.go:ExampleAdd` for an example). These show up in docs. 
 
-### [Stopping point 2024-01-16](https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/hello-world#keep-going-more-requirements)
+## Stopping points: 
+- [Stopping point 2024-01-16](https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/hello-world#keep-going-more-requirements)
+- [Stopping point 2024-01-17](https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/arrays-and-slices)
