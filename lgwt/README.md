@@ -18,6 +18,20 @@ I chose to start here as it was recommended to me by a friend and because I saw 
 ### Running tests
 `go test`
 
+### Running benchmarks 
+
+to run benchmakrs you need to create a benchmark and run them from within the correct folder with `go test -bench="."`
+
+example would be: 
+
+```go
+func BenchmarkRepeat(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		Repeat("a", 100)
+	}
+}
+```
+
 ### Documentation 
 
 SEe more on `godoc` here [on the site](https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/hello-world#go-doc)
