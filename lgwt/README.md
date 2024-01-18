@@ -22,4 +22,8 @@ I chose to start here as it was recommended to me by a friend and because I saw 
 
 SEe more on `godoc` here [on the site](https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/hello-world#go-doc)
 
+- if you run `godoc` in the same folder as your `go.mod` file it will load your package in as part of the standard lib section.
+- comments above each function show up in the documentation as well.
+- you can setup examples (see `integers/adder_test.go:ExampleAdd` for an example). These show up in docs. 
+
 ### [Stopping point 2024-01-16](https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/hello-world#keep-going-more-requirements)
