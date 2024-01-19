@@ -12,6 +12,23 @@ I chose to start here as it was recommended to me by a friend and because I saw 
 
 [See how to do the install here](https://go.dev/doc/install). The linux guide was pretty easy which is nice. just had to unzip the zip and add some stuff to my bashrc
 
+### Creating modules 
+
+To create a module you should create a new folder, cd into it, then run `go mod init <name-of-folder-or-module-or-repo-url>`. 
+Each module can have multiple "packages" which are typically in folders that are *inside* the module. Each file has `package <package-name>` at the top. 
+
+- module 
+  - package1
+    - package1.go
+    - package1_test.go
+  - package2
+    - package2.go
+    - package2_test.go
+  - go.mod (keeps track of module info, deps, and other info)
+  - go.sum (deps lock? seems like a `package.lock.json`?)
+
+This could be wrong, but it's what I'm seeing so far while going through this course.
+
 ### Running code 
 `go run hello.go`
 
@@ -34,7 +51,7 @@ func BenchmarkRepeat(b *testing.B) {
 
 ### Documentation 
 
-SEe more on `godoc` here [on the site](https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/hello-world#go-doc)
+See more on `godoc` here [on the site](https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/hello-world#go-doc)
 
 - if you run `godoc` in the same folder as your `go.mod` file it will load your package in as part of the standard lib section.
 - comments above each function show up in the documentation as well.
