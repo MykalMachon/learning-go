@@ -60,3 +60,4 @@ See more on `godoc` here [on the site](https://quii.gitbook.io/learn-go-with-tes
 ## Stopping points: 
 - [Stopping point 2024-01-16](https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/hello-world#keep-going-more-requirements)
 - [Stopping point 2024-01-17](https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/arrays-and-slices)
+- [Stopping point on 2024-01-22](https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/arrays-and-slices#write-the-test-first-3)
