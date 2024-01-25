@@ -40,3 +40,10 @@ func SumAll(numbersToSum ...[]int) []int {
 
 	return sums
 }
+
+func SumAllTails(numbersToSumTails ...[]int) (sum int) {
+	for _, numbers := range numbersToSumTails {
+		sum += numbers[len(numbers)-1]
+	}
+	return
+}
