@@ -64,3 +64,4 @@ See more on `godoc` here [on the site](https://quii.gitbook.io/learn-go-with-tes
 - [Stopping point on 2024-01-23](https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/structs-methods-and-interfaces)
 - [Stopping point on 2024-02-06](https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/pointers-and-errors#refactor)
 - [Stopping point on 2024-02-07](https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/maps)
+- [Stopping point on 2024-02-08](https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/mocking)
