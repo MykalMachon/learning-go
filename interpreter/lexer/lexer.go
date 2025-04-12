@@ -11,21 +11,19 @@ type Lexer struct {
 
 func New(input string) *Lexer {
 	l := &Lexer{input: input}
-	l.ReadChar() // read in the first character
+	l.readChar() // read in the first character
 	return l
 }
 
 /*
-*
+read the current character into l.ch
+and increment l.position and l.readPosition
+further into the input.
 
-	read the current character into l.ch
-	and increment l.position and l.readPosition
-	further into the input.
-
-	if we've reached the end of input,
-	set the l.ch value to 0 (null)
+if we've reached the end of input,
+set the l.ch value to 0 (null)
 */
-func (l *Lexer) ReadChar() {
+func (l *Lexer) readChar() {
 	if l.readPosition >= len(l.input) {
 		l.ch = 0
 	} else {
@@ -35,8 +33,27 @@ func (l *Lexer) ReadChar() {
 	l.readPosition += 1
 }
 
+func (l *Lexer) readIdentifier() string {
+	identPosStart := l.position
+	for isLetter(l.ch) {
+		l.readChar()
+	}
+	return l.input[identPosStart:l.position]
+}
+
+func (l *Lexer) readNumber() string {
+	numberPosStart := l.position
+	for isDigit(l.ch) {
+		l.readChar()
+	}
+	return l.input[numberPosStart:l.position]
+}
+
 func (l *Lexer) NextToken() token.Token {
 	var tok token.Token
+
+	// skip whitespace between tokens
+	l.skipWhitespace()
 
 	switch l.ch {
 	case '=':
@@ -58,11 +75,35 @@ func (l *Lexer) NextToken() token.Token {
 	case 0:
 		tok = token.Token{Type: token.EOF, Literal: ""}
 	default:
-		tok = newToken(token.ILLEGAL, l.ch)
+		if isLetter(l.ch) {
+			tok.Literal = l.readIdentifier()
+			tok.Type = token.LookupIdent(tok.Literal)
+			return tok
+		} else if isDigit(l.ch) {
+			tok.Literal = l.readNumber()
+			tok.Type = token.INT
+			return tok
+		} else {
+			tok = newToken(token.ILLEGAL, l.ch)
+		}
 	}
 
-	l.ReadChar()
+	l.readChar()
 	return tok
+}
+
+func (l *Lexer) skipWhitespace() {
+	for l.ch == ' ' || l.ch == '\t' || l.ch == '\n' || l.ch == '\r' {
+		l.readChar()
+	}
+}
+
+func isLetter(ch byte) bool {
+	return (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') || ch == '_'
+}
+
+func isDigit(ch byte) bool {
+	return '0' <= ch && ch <= '9'
 }
 
 func newToken(tokenType token.TokenType, ch byte) token.Token {
